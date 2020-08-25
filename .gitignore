@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+#devlopement
+/dist
+
+#temp
+/tmp
+/temp
+
+
+#Env file
+.env
+
+# misc
+.DS_Store
+.idea
+.npmrc
+
+npm-debug.log*
+newman_report.html
