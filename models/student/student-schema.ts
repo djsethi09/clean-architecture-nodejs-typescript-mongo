@@ -1,8 +1,8 @@
 let Joi = require('joi')
 
 export default Joi.object().keys({
-  name: Joi.string().required().error(() => 'must have name as string'),
-  age: Joi.number().error(() => 'age must be a number'),
-  grade: Joi.number().error(() => 'grade must be a number'),
-  prefect: Joi.boolean().error(() => 'prefect must be a boolean')
+  name: Joi.string().required(),
+  age: Joi.number().error(() => { throw new Error('age must be a number') }),
+  grade: Joi.number().error(() => { throw new Error('grade must be a number') }),
+  prefect: Joi.boolean().error(() => { throw new Error('prefect must be a boolean') })
 })

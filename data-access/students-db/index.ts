@@ -7,7 +7,8 @@ import {
   dropAll
 } from
   // = require('./memory/index') // switch out db as required
-  './mongod/index'
+  // './mongod/index'
+  './pg/index'
 
 
 let studentsDb = {

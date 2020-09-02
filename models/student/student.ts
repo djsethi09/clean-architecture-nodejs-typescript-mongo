@@ -3,16 +3,18 @@ let buildMakeStudent = function (studentValidator: any) {
     name,
     age,
     grade,
-    prefect = false
+    prefect
   }: any = {}) => {
     let { error } = studentValidator({ name, age, grade, prefect })
-    if (error) throw new Error(error)
-
-    return {
-      getName: () => name,
-      getAge: () => age,
-      getGrade: () => grade,
-      isPrefect: () => prefect
+    if (error) {
+      throw new Error(error)
+    } else {
+      return {
+        getName: () => name,
+        getAge: () => age,
+        getGrade: () => grade,
+        isPrefect: () => prefect
+      }
     }
   }
 }

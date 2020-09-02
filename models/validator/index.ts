@@ -1,11 +1,7 @@
-let Joi = require('joi')
-
 let validator = (schema: any) =>
-  async (payload: any) => {
-    try {
-      const value = await schema.validateAsync(payload);
-    }
-    catch (error) {
+  (payload: any) => {
+    const { value, error } = schema.validate(payload);
+    if (error) {
       let message = error.details.map((el: any) => el.message).join('\n')
       return {
         error: message
@@ -13,5 +9,4 @@ let validator = (schema: any) =>
     }
     return true
   }
-
 export default validator
